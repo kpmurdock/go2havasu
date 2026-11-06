@@ -338,7 +338,7 @@ button, input { font-family: inherit; }
 .pos-wake { object-position: center 30%; }
 .pos-ridge { object-position: 62% 55%; }
 .pos-palms { object-position: 74% center; }
-.pos-sunset { object-position: 62% 40%; }
+.pos-sunset { object-position: 82% 42%; }
 
 .attraction-card .shot,
 .attraction-card .shot picture,
@@ -780,6 +780,9 @@ button, input { font-family: inherit; }
 .sunset-banner {
   position: relative;
   flex: 1 1 auto;
+  align-self: stretch;
+  width: 100%;
+  margin: 0;
   min-height: 180px;
   border-radius: 8px;
   overflow: hidden;
