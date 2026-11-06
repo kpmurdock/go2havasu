@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "Go2Havasu — Lake Havasu Travel Guide",
+  "short_name": "Go2Havasu",
+  "description": "Explore Lake Havasu attractions, trip ideas, and Go2Havasu merchandise.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#062b5a",
+  "icons": [
+    {
+      "src": "/assets/go2havasu-logo.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}
