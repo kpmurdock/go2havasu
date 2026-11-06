@@ -282,6 +282,44 @@ button, input { font-family: inherit; }
   color: #fff;
 }
 
+.hero.hero-art {
+  display: block;
+  min-height: 0;
+  padding: 0;
+}
+
+.hero.hero-art picture,
+.hero.hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-hit {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+  text-indent: -999px;
+  white-space: nowrap;
+  border-radius: 12px;
+  background: transparent;
+}
+
+.hero-hit-primary {
+  left: 4.8%;
+  top: 73.6%;
+  width: 25.6%;
+  height: 14.2%;
+}
+
+.hero-hit-secondary {
+  left: 31.6%;
+  top: 74.2%;
+  width: 20.2%;
+  height: 13.2%;
+}
+
 .ph {
   background-color: #0d4f73;
   background-image:
@@ -373,7 +411,7 @@ button, input { font-family: inherit; }
 .bridge-live {
   position: relative;
   height: 100%;
-  min-height: 368px;
+  min-height: 0;
   margin: 0;
   border-radius: 8px;
   overflow: hidden;
@@ -871,6 +909,7 @@ button, input { font-family: inherit; }
   .col-side { padding: 0 12px 16px; }
   .bridge-live { height: 420px; margin-top: 0; }
   .hero { min-height: 420px; }
+  .hero.hero-art { min-height: 0; }
   .attraction-card .shot,
   .attraction-card .shot picture,
   .attraction-card .shot img { height: 180px; }
@@ -910,6 +949,7 @@ button, input { font-family: inherit; }
 
 @media (max-width: 520px) {
   .hero { min-height: 460px; }
+  .hero.hero-art { min-height: 0; }
   .hero h1 { font-size: 40px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .quick-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -21,7 +21,7 @@
   <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preload" as="image" href="/assets/images/hero-london-bridge-sunset.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/images/explore-hero.webp" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -76,22 +76,15 @@
     <main id="main">
       <div class="showcase">
         <div class="col-main">
-          <section class="hero" aria-labelledby="hero-title">
-            <div class="shot">
-              <picture>
-                <source srcset="/assets/images/hero-london-bridge-sunset.webp" type="image/webp">
-                <img class="pos-hero" src="/assets/images/hero-london-bridge-sunset.jpg" alt="The London Bridge in Lake Havasu City at sunset, with tour boats on the water and the sun shining through a stone arch." width="911" height="482" fetchpriority="high" decoding="async">
-              </picture>
-            </div>
-            <div class="hero-scrim" aria-hidden="true"></div>
-            <div class="hero-content">
-              <h1 id="hero-title">Explore<br>Lake Havasu City</h1>
-              <p>The London Bridge. Lake Fun. Desert Adventures. <span>Your Guide to Havasu and Beyond.</span></p>
-              <div class="hero-actions">
-                <a class="primary-button" href="/things-to-do.html">Discover Things to Do</a>
-                <a class="outline-button" href="#plan">Plan Your Visit</a>
-              </div>
-            </div>
+          <section class="hero hero-art" aria-labelledby="hero-title">
+            <h1 id="hero-title" class="visually-hidden">Explore Lake Havasu City</h1>
+            <p class="visually-hidden">The London Bridge. Lake Fun. Desert Adventures. Your Guide to Havasu and Beyond.</p>
+            <picture>
+              <source srcset="/assets/images/explore-hero.webp" type="image/webp">
+              <img src="/assets/images/explore-hero.jpg" alt="" width="914" height="364" fetchpriority="high" decoding="async">
+            </picture>
+            <a class="hero-hit hero-hit-primary" href="/things-to-do.html">Discover Things to Do</a>
+            <a class="hero-hit hero-hit-secondary" href="#plan">Plan Your Visit</a>
           </section>
 
           <nav class="quick-nav" aria-label="Explore categories">
