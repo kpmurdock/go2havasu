@@ -338,7 +338,7 @@ button, input { font-family: inherit; }
 .pos-boat { object-position: center 62%; }
 .pos-hikers { object-position: center 72%; }
 .pos-cove { object-position: 58% 48%; }
-.pos-channel { object-position: center 46%; }
+.pos-channel { object-position: center top; }
 .pos-night { object-position: center 38%; }
 .pos-wake { object-position: center 30%; }
 .pos-ridge { object-position: 62% 55%; }
@@ -352,7 +352,7 @@ button, input { font-family: inherit; }
 .bridge-live {
   position: relative;
   height: 348px;
-  margin: 0;
+  margin: 92px 0 0;
   border-radius: 8px;
   overflow: hidden;
   background: #07375d;
@@ -845,7 +845,7 @@ button, input { font-family: inherit; }
   .showcase { grid-template-columns: 1fr; }
   .site-header { align-items: center; min-height: 84px; position: sticky; top: 0; }
   .col-side { padding: 0 12px 16px; }
-  .bridge-live { height: 420px; }
+  .bridge-live { height: 420px; margin-top: 0; }
   .hero { min-height: 420px; }
   .attraction-card .shot,
   .attraction-card .shot picture,
