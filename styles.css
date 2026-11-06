@@ -292,9 +292,70 @@ button, input { font-family: inherit; }
   right: 12px;
 }
 
+.shot,
+.shot picture {
+  display: block;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .shot,
+.hero .shot picture,
+.hero .shot img,
+.video-stage .shot,
+.video-stage .shot picture,
+.video-stage .shot img,
+.mini-card .shot,
+.mini-card .shot picture,
+.mini-card .shot img,
+.sunset-banner .shot,
+.sunset-banner .shot picture,
+.sunset-banner .shot img {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(5, 20, 40, 0.66) 0%, rgba(5, 20, 40, 0.28) 46%, rgba(5, 20, 40, 0.08) 100%);
+}
+
+.pos-hero { object-position: 68% 42%; }
+.pos-bridge { object-position: center 42%; }
+.pos-boat { object-position: center 62%; }
+.pos-hikers { object-position: center 72%; }
+.pos-cove { object-position: 58% 48%; }
+.pos-aerial { object-position: 58% 64%; }
+.pos-night { object-position: center 38%; }
+.pos-wake { object-position: center 30%; }
+.pos-ridge { object-position: 62% 55%; }
+.pos-palms { object-position: 74% center; }
+.pos-sunset { object-position: center 42%; }
+
+.attraction-card .shot,
+.attraction-card .shot picture,
+.attraction-card .shot img { height: 124px; position: relative; inset: auto; }
+
+.video-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 18, 36, 0.5), transparent 30%, transparent 68%, rgba(0, 10, 20, 0.45));
+}
+
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding: 48px 6.5% 36px;
   max-width: 680px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
@@ -1068,7 +1129,9 @@ button, input { font-family: inherit; }
   .col-side { padding: 0 12px 16px; }
   .video-panel { height: 420px; }
   .hero { min-height: 420px; }
-  .attraction-card .ph { height: 180px; }
+  .attraction-card .shot,
+  .attraction-card .shot picture,
+  .attraction-card .shot img { height: 180px; }
   .business-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 0; }
   .biz-col:nth-child(2) { border-right: 0; }
   .biz-col:nth-child(1),
@@ -1114,7 +1177,9 @@ button, input { font-family: inherit; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .quick-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .attraction-grid { grid-template-columns: 1fr; }
-  .attraction-card .ph { height: 168px; }
+  .attraction-card .shot,
+  .attraction-card .shot picture,
+  .attraction-card .shot img { height: 168px; }
   .mini-card { min-height: 132px; }
   .business-grid { grid-template-columns: 1fr; }
   .biz-col { border-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 8px; }

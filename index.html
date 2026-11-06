@@ -19,6 +19,7 @@
   <meta name="twitter:image" content="https://www.go2havasu.com/assets/og-cover.png">
   <meta name="theme-color" content="#0b3a66">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="/assets/images/hero-london-bridge-sunset.webp" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -70,9 +71,13 @@
           </header>
 
           <section class="hero" aria-labelledby="hero-title">
-            <div class="ph ph-hero" role="img" aria-label="Placeholder for a photo of the London Bridge at sunset, with boats on the water.">
-              <span class="ph-badge">Photo needed: London Bridge at sunset</span>
+            <div class="shot">
+              <picture>
+                <source srcset="/assets/images/hero-london-bridge-sunset.webp" type="image/webp">
+                <img class="pos-hero" src="/assets/images/hero-london-bridge-sunset.jpg" alt="The London Bridge in Lake Havasu City at sunset, with tour boats on the water and the sun shining through a stone arch." width="911" height="482" fetchpriority="high" decoding="async">
+              </picture>
             </div>
+            <div class="hero-scrim" aria-hidden="true"></div>
             <div class="hero-content">
               <h1 id="hero-title">Explore<br>Lake Havasu City</h1>
               <p>The London Bridge. Lake Fun. Desert Adventures. <span>Your Guide to Havasu and Beyond.</span></p>
@@ -114,7 +119,7 @@
             <h2 id="explore-title">Top Things to See &amp; Do</h2>
             <div class="attraction-grid">
               <a class="attraction-card" href="/things-to-do.html#london-bridge">
-                <span class="ph ph-bridge"><span class="ph-badge">Photo needed</span></span>
+                <span class="shot"><picture><source srcset="/assets/images/card-1-london-bridge.webp" type="image/webp"><img class="pos-bridge" src="/assets/images/card-1-london-bridge.jpg" alt="A white tour boat passing under the stone arches of the London Bridge on a sunny day." width="209" height="126" loading="lazy" decoding="async"></picture></span>
                 <span class="attraction-text">
                   <span class="attraction-copy">
                     <h3>The London Bridge</h3>
@@ -124,7 +129,7 @@
                 </span>
               </a>
               <a class="attraction-card" href="/things-to-do.html#boating">
-                <span class="ph ph-lake"><span class="ph-badge">Photo needed</span></span>
+                <span class="shot"><picture><source srcset="/assets/images/card-2-lake-boating.webp" type="image/webp"><img class="pos-boat" src="/assets/images/card-2-lake-boating.jpg" alt="A motorboat with passengers crossing blue water, with desert mountains behind it." width="202" height="126" loading="lazy" decoding="async"></picture></span>
                 <span class="attraction-text">
                   <span class="attraction-copy">
                     <h3>Lake Havasu</h3>
@@ -134,7 +139,7 @@
                 </span>
               </a>
               <a class="attraction-card" href="/things-to-do.html#buckskin">
-                <span class="ph ph-hike"><span class="ph-badge">Photo needed</span></span>
+                <span class="shot"><picture><source srcset="/assets/images/card-3-desert-hiking.webp" type="image/webp"><img class="pos-hikers" src="/assets/images/card-3-desert-hiking.jpg" alt="Two hikers with backpacks walking a rocky desert trail toward red hills." width="201" height="126" loading="lazy" decoding="async"></picture></span>
                 <span class="attraction-text">
                   <span class="attraction-copy">
                     <h3>Buckskin Mountain</h3>
@@ -144,7 +149,7 @@
                 </span>
               </a>
               <a class="attraction-card" href="/things-to-do.html#parks">
-                <span class="ph ph-park"><span class="ph-badge">Photo needed</span></span>
+                <span class="shot"><picture><source srcset="/assets/images/card-4-lake-coves.webp" type="image/webp"><img class="pos-cove" src="/assets/images/card-4-lake-coves.jpg" alt="A boat on turquoise water in a rocky desert cove along the lake." width="215" height="126" loading="lazy" decoding="async"></picture></span>
                 <span class="attraction-text">
                   <span class="attraction-copy">
                     <h3>State Parks &amp; Areas</h3>
@@ -161,8 +166,11 @@
           <section class="video-panel" aria-labelledby="video-heading">
             <h2 id="video-heading">Lake Havasu City – Top 10 Things to See &amp; Do <span>(Travel Guide)</span></h2>
             <div class="video-stage">
-              <div class="ph ph-aerial" role="img" aria-label="Placeholder for an aerial photo of the Lake Havasu channel, London Bridge, and a boat wake.">
-                <span class="ph-badge">Video poster needed</span>
+              <div class="shot">
+                <picture>
+                  <source srcset="/assets/images/video-poster-aerial-lake.webp" type="image/webp">
+                  <img class="pos-aerial" src="/assets/images/video-poster-aerial-lake.jpg" alt="Aerial view of a boat leaving a wake on the Lake Havasu channel, with waterfront homes and the London Bridge." width="725" height="340" loading="lazy" decoding="async">
+                </picture>
               </div>
               <button class="big-play" id="bigPlay" type="button" aria-expanded="false" aria-controls="videoStatus" aria-label="Play travel guide video">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l12-7z"/></svg>
@@ -197,23 +205,19 @@
 
           <div class="mini-gallery" aria-label="Featured destinations">
             <a class="mini-card" href="/things-to-do.html#london-bridge">
-              <span class="ph ph-waterfront"></span>
-              <span class="ph-badge">Photo needed</span>
+              <span class="shot"><picture><source srcset="/assets/images/thumb-1-bridge-night.webp" type="image/webp"><img class="pos-night" src="/assets/images/thumb-1-bridge-night.jpg" alt="The London Bridge lit at night, with yellow lights reflecting on the water." width="173" height="153" loading="lazy" decoding="async"></picture></span>
               <strong>London Bridge<br>Waterfront</strong>
             </a>
             <a class="mini-card" href="/things-to-do.html#boating">
-              <span class="ph ph-boating"></span>
-              <span class="ph-badge">Photo needed</span>
+              <span class="shot"><picture><source srcset="/assets/images/thumb-2-wakeboarding.webp" type="image/webp"><img class="pos-wake" src="/assets/images/thumb-2-wakeboarding.jpg" alt="A wakeboarder riding the spray behind a boat on the lake." width="167" height="153" loading="lazy" decoding="async"></picture></span>
               <strong>Lake Havasu<br>Boating</strong>
             </a>
             <a class="mini-card" href="/things-to-do.html#buckskin">
-              <span class="ph ph-hike-sunset"></span>
-              <span class="ph-badge">Photo needed</span>
+              <span class="shot"><picture><source srcset="/assets/images/thumb-3-desert-hike-sunset.webp" type="image/webp"><img class="pos-ridge" src="/assets/images/thumb-3-desert-hike-sunset.jpg" alt="A hiker with a backpack standing on a rock ridge at sunset, looking over desert mountains." width="170" height="153" loading="lazy" decoding="async"></picture></span>
               <strong>Buckskin<br>Mountain Hike</strong>
             </a>
             <a class="mini-card" href="/things-to-do.html#state-park">
-              <span class="ph ph-palms"></span>
-              <span class="ph-badge">Photo needed</span>
+              <span class="shot"><picture><source srcset="/assets/images/thumb-4-beach-palms.webp" type="image/webp"><img class="pos-palms" src="/assets/images/thumb-4-beach-palms.jpg" alt="Palm trees on a sandy point beside turquoise water, with swimmers and desert mountains beyond." width="163" height="153" loading="lazy" decoding="async"></picture></span>
               <strong>Lake Havasu<br>State Park</strong>
             </a>
           </div>
@@ -277,8 +281,12 @@
           </section>
 
           <figure class="sunset-banner">
-            <div class="ph ph-desert" role="img" aria-label="Placeholder for a sunset photo of the desert, lake, and mountains near Lake Havasu."></div>
-            <span class="ph-badge">Photo needed: desert lake sunset</span>
+            <div class="shot">
+              <picture>
+                <source srcset="/assets/images/footer-sunset.webp" type="image/webp">
+                <img class="pos-sunset" src="/assets/images/footer-sunset.jpg" alt="Sunset over a desert lake, with saguaro cacti in the foreground and mountains across the water." width="736" height="178" loading="lazy" decoding="async">
+              </picture>
+            </div>
           </figure>
         </aside>
       </div>
