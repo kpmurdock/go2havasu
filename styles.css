@@ -111,9 +111,10 @@ button, input { font-family: inherit; }
 
 .brand {
   display: grid;
-  grid-template-columns: 46px max-content;
+  grid-template-columns: auto max-content;
   grid-template-rows: auto auto;
-  align-items: end;
+  align-items: center;
+  column-gap: 12px;
   width: max-content;
   max-width: 100%;
   flex: 0 1 auto;
@@ -122,12 +123,16 @@ button, input { font-family: inherit; }
 }
 
 .brand-art {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  width: 148px;
-  height: 54px;
-  object-fit: contain;
-  object-position: left bottom;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  height: 68px;
+  width: auto;
+}
+
+.brand-art img {
+  display: block;
+  height: 68px;
+  width: auto;
 }
 
 .brand-name {
@@ -157,8 +162,8 @@ button, input { font-family: inherit; }
 }
 
 @container header (min-width: 980px) {
-  .brand { grid-template-columns: 64px max-content; }
-  .brand-art { width: 200px; height: 72px; }
+  .brand-art,
+  .brand-art img { height: 72px; }
   .brand-name { font-size: 26px; }
   .brand-tag { font-size: 12px; }
   .main-nav { gap: 18px; }
@@ -1054,6 +1059,8 @@ button, input { font-family: inherit; }
   .info-grid { grid-template-columns: 1fr; }
   .search-row { flex-direction: column; }
   .brand-name { font-size: 18px; }
+  .brand-art,
+  .brand-art img { height: 56px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
