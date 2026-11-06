@@ -351,8 +351,8 @@ button, input { font-family: inherit; }
 
 .bridge-live {
   position: relative;
-  height: 348px;
-  margin: 92px 0 0;
+  height: 368px;
+  margin: 0;
   border-radius: 8px;
   overflow: hidden;
   background: #07375d;
