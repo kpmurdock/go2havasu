@@ -21,7 +21,7 @@
   <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preload" as="image" href="/assets/images/explore-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/images/hero-london-bridge-sunset.webp" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -45,29 +45,18 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page-frame">
-    <header class="site-header home-header" role="banner">
-      <!-- Image-only color key: removes the pale rectangular logo matte.
-           Live navigation, keyboard focus, and search remain HTML controls. -->
-      <svg aria-hidden="true" focusable="false" width="0" height="0"
-           style="position:absolute;width:0;height:0;overflow:hidden"
-           xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="havasu-logo-matte-removal" x="0" y="0" width="100%" height="100%"
-                  color-interpolation-filters="sRGB">
-            <feColorMatrix type="matrix" values="
-               1 0 0 0 0
-               0 1 0 0 0
-               0 0 1 0 0
-              -2.5 -2.5 -2.5 0 5.625"/>
-          </filter>
-        </defs>
-      </svg>
-            <a class="brand" href="/">
-              <picture class="brand-art">
-                <source srcset="/assets/images/header-logo-hero.webp" type="image/webp">
-                <img src="/assets/images/header-logo-hero.png" alt="Go2Havasu.com, Lake Havasu City, Arizona" width="311" height="128">
-              </picture>
-            </a>
+    <section class="home-stage" aria-label="London Bridge, Lake Havasu at sunset">
+      <picture class="home-stage-photo" aria-hidden="true">
+        <source srcset="/assets/images/hero-london-bridge-sunset.webp" type="image/webp">
+        <img src="/assets/images/hero-london-bridge-sunset.jpg"
+             alt="" width="912" height="480" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="home-stage-scrim" aria-hidden="true"></div>
+      <header class="site-header home-header" role="banner">
+        <a class="brand" href="/" aria-label="Go2Havasu.com home">
+          <img class="home-logo" src="/assets/images/go2havasu-logo-clear.svg"
+               alt="Go2Havasu.com — Lake Havasu City, Arizona" width="299" height="105">
+        </a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
               <span class="menu-bars"></span>
             </button>
@@ -87,20 +76,20 @@
               </svg>
             </button>
             </div>
-    </header>
+      </header>
+      <div class="home-stage-content">
+        <h1>Explore<br>Lake Havasu City</h1>
+        <p>The London Bridge. Lake fun. Desert adventures.<br>Your guide to Havasu and beyond.</p>
+        <div class="home-stage-actions">
+          <a class="home-stage-action-primary" href="/things-to-do.html">Explore Things to Do <span aria-hidden="true">→</span></a>
+          <a class="home-stage-action-secondary" href="/plan.html">Plan Your Trip</a>
+        </div>
+      </div>
+    </section>
     <main id="main">
-      <div class="showcase">
+      <div class="showcase home-showcase">
         <div class="col-main">
-          <section class="hero hero-art" aria-labelledby="hero-title">
-            <h1 id="hero-title" class="visually-hidden">Explore Lake Havasu City</h1>
-            <p class="visually-hidden">The London Bridge. Lake Fun. Desert Adventures. Your Guide to Havasu and Beyond.</p>
-            <picture>
-              <source srcset="/assets/images/explore-hero.webp" type="image/webp">
-              <img src="/assets/images/explore-hero.jpg" alt="" width="914" height="364" fetchpriority="high" decoding="async">
-            </picture>
-            <a class="hero-hit hero-hit-primary" href="/things-to-do.html">Discover Things to Do</a>
-            <a class="hero-hit hero-hit-secondary" href="/plan.html">Plan Your Visit</a>
-          </section>
+
 
           <nav class="quick-nav" aria-label="Explore categories">
             <a href="/boating.html">
