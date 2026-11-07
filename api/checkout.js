@@ -14,8 +14,8 @@ module.exports=async function handler(req,res){
   const quantities={};
   for(const name of items){if(typeof name!=='string'||!Object.hasOwn(catalog,name))return res.status(400).json({error:'Unknown product'});quantities[name]=(quantities[name]||0)+1;}
   const params=new URLSearchParams();params.set('mode','payment');
-  const origin='https://'+req.headers.host;
-  if(!/^[a-z0-9.-]+(?::[0-9]+)?$/i.test(req.headers.host||''))return res.status(400).json({error:'Invalid host'});
+  const origin=process.env.CHECKOUT_SITE_URL;
+  if(!origin||!/^https:\/\/[a-z0-9.-]+(?::[0-9]+)?$/i.test(origin))return res.status(503).json({error:'Checkout return URL is not configured.'});
   params.set('success_url',origin+'/?checkout=success#shop');
   params.set('cancel_url',origin+'/?checkout=cancel#shop');
   let i=0;
