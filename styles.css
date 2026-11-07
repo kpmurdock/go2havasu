@@ -163,7 +163,7 @@ button, input { font-family: inherit; }
 .header-nav { display: contents; }
 
 @media (min-width: 861px) {
-  .brand { margin-right: -34px; }
+  .brand { margin-right: 6px; }
   .site-header { align-items: flex-end; }
   .header-nav {
     position: static;
@@ -173,8 +173,8 @@ button, input { font-family: inherit; }
     gap: 2px;
     flex: 0 1 auto;
     min-width: 0;
-    /* Links sit on the Go2Havasu.com line, under the sun and bridge. */
-    margin-bottom: 4px;
+    /* Links sit on the Go2Havasu.com line, above the white wave. */
+    margin-bottom: 12px;
   }
   .header-nav .main-nav {
     position: static;
