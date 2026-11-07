@@ -1,0 +1,492 @@
+/* Owner-approved Go2Havasu homepage art, November 2026.
+   The exact three-boat sunset artwork is one continuous hero image.
+   This overlay provides real semantic links, accessible search and mobile navigation;
+   no painted header band, second sky, square matte or seam. */
+.home-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1672 / 941;
+  min-height: 0;
+  height: auto;
+  overflow: hidden;
+  isolation: isolate;
+  background: #477fae;
+}
+.home-stage-photo,
+.home-stage-photo img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.home-stage-photo { z-index: 0; }
+.home-stage-photo img {
+  object-fit: fill;
+  object-position: center;
+}
+.home-stage .home-stage-scrim { display: none; }
+.home-stage .home-header {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: visible;
+  background: transparent;
+  background-image: none;
+  border: 0;
+  box-shadow: none;
+  isolation: auto;
+  container-type: normal;
+  pointer-events: none;
+}
+.home-stage .home-header::before,
+.home-stage .home-header::after { display: none; content: none; }
+.home-stage .home-header .brand {
+  position: absolute;
+  z-index: 8;
+  left: 3.3%;
+  top: 1.9%;
+  width: 29.7%;
+  height: 19%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  pointer-events: auto;
+  background: transparent;
+  border-radius: 5px;
+}
+.home-stage .home-header .home-logo {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  filter: none;
+  display: block;
+}
+.home-stage .home-header .header-nav {
+  display: contents;
+  margin: 0;
+  padding: 0;
+}
+.home-stage .home-header .main-nav {
+  position: absolute;
+  z-index: 9;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.home-stage .home-header .main-nav a {
+  position: absolute;
+  top: 8.0%;
+  height: 4.25%;
+  display: block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: auto;
+  /* The approved visual typography is preserved in the photograph.
+     Actual anchor text remains in the DOM for keyboard and screen-reader use. */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  background: transparent;
+  font-size: clamp(12px, 1.15vw, 19px);
+  line-height: 1.4;
+  font-weight: 800;
+}
+.home-stage .home-header .main-nav a:nth-child(1) { left: 37.0%; width: 6.2%; }
+.home-stage .home-header .main-nav a:nth-child(2) { left: 44.4%; width: 10.5%; }
+.home-stage .home-header .main-nav a:nth-child(3) { left: 56.3%; width: 11.7%; }
+.home-stage .home-header .main-nav a:nth-child(4) { left: 69.5%; width: 6.0%; }
+.home-stage .home-header .main-nav a:nth-child(5) { left: 76.7%; width: 11.2%; }
+.home-stage .home-header .main-nav a:nth-child(6) { left: 88.6%; width: 5.0%; }
+/* Keep the blue hover state and clickable links; remove only link underlining. 
+   Keyboard focus retains its existing high-visibility outline. */
+.home-stage .home-header .main-nav a:hover,
+.home-stage .home-header .main-nav a:focus-visible,
+.home-stage .home-header .brand:hover,
+.home-stage .home-header .brand:focus-visible {
+  text-decoration: none;
+  text-decoration-line: none;
+}
+.home-stage .home-header .main-nav a:focus-visible,
+.home-stage .home-header .brand:focus-visible,
+.home-stage .home-header .nav-search:focus-visible,
+.home-stage .home-header .menu-toggle:focus-visible {
+  outline: 3px solid #ffbf00;
+  outline-offset: 2px;
+}
+.home-stage .home-header .nav-search {
+  position: absolute;
+  z-index: 9;
+  left: 94.1%;
+  top: 7.3%;
+  width: 3.2%;
+  height: 4.9%;
+  min-width: 34px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: block;
+  background: transparent;
+  pointer-events: auto;
+  color: transparent;
+  cursor: pointer;
+}
+.home-stage .home-header .nav-search svg { opacity: 0; }
+.home-stage .home-header .menu-toggle { display: none; }
+
+/* Visual copy matches the approved photograph exactly.
+   Real H1, description and CTA anchor text remain accessible in the DOM. */
+.home-stage-content {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  color: transparent;
+  text-shadow: none;
+}
+.home-stage-content h1,
+.home-stage-content p {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.home-stage-actions {
+  position: static;
+  display: contents;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.home-stage-actions a {
+  position: absolute;
+  z-index: 7;
+  top: 54.1%;
+  display: block;
+  height: 6.8%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: auto;
+}
+.home-stage-actions a span { color: transparent; }
+.home-stage-actions .home-stage-action-primary { left: 4.55%; width: 18.6%; }
+.home-stage-actions .home-stage-action-secondary { left: 24.1%; width: 12.7%; }
+.home-stage-actions a:hover {
+  box-shadow: 0 0 0 4px rgba(255,255,255,.55);
+}
+.home-stage-actions a:focus-visible {
+  outline: 4px solid #ffbf00;
+  outline-offset: 2px;
+}
+
+/* Keep the existing content and links below the full-bleed photo. */
+.home-showcase {
+  grid-template-rows: none;
+  align-items: start;
+  background: #f4f8fe;
+}
+.home-showcase .col-main,
+.home-showcase .col-side {
+  display: flex;
+  flex-direction: column;
+  grid-row: auto;
+  min-width: 0;
+  gap: 0;
+}
+.home-showcase .col-side { gap: 10px; padding: 12px 10px; }
+.home-showcase .col-side .bridge-live { flex: 0 0 360px; height: 360px; }
+.home-showcase .col-side .sunset-banner { flex: 0 0 220px; height: 220px; }
+
+@media (max-width: 860px) {
+  /* Crop to the bridge, sun and water; show a truly live mobile menu. */
+  .home-stage {
+    height: min(760px, max(590px, 90svh));
+    min-height: 590px;
+    aspect-ratio: auto;
+  }
+  .home-stage-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 77% center;
+  }
+  .home-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(8,29,54,.18) 0%,
+      rgba(8,29,54,.11) 32%,
+      rgba(8,29,54,.6) 70%,
+      rgba(8,29,54,.5) 100%);
+  }
+  .home-stage .home-header {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    display: block;
+    z-index: 12;
+  }
+  .home-stage .home-header .brand {
+    left: 14px;
+    top: 8px;
+    width: min(55vw, 244px);
+    height: auto;
+    min-height: 85px;
+    border-radius: 0;
+  }
+  .home-stage .home-header .home-logo {
+    display: block;
+    height: auto;
+    opacity: 1;
+    filter: saturate(1.32) contrast(1.28)
+      drop-shadow(0 1px 2px rgba(255,255,255,.85));
+  }
+  .home-stage .home-header .menu-toggle {
+    display: inline-flex;
+    position: absolute;
+    z-index: 13;
+    top: 17px;
+    right: 60px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,.85);
+    pointer-events: auto;
+  }
+  .home-stage .home-header .nav-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: auto;
+    top: 17px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.85);
+    color: #102848;
+  }
+  .home-stage .home-header .nav-search svg { opacity: 1; width: 22px; height: 22px; }
+  .home-stage .home-header .main-nav {
+    position: absolute;
+    top: 70px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    height: auto;
+    display: none;
+    padding: 8px;
+    margin: 0;
+    z-index: 14;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 45px rgba(2,23,47,.26);
+    pointer-events: auto;
+  }
+  .home-stage .home-header .main-nav.is-open { display: flex; flex-direction: column; }
+  .home-stage .home-header .main-nav a {
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 12px 14px;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 800;
+    border-radius: 8px;
+    color: #102848;
+    -webkit-text-fill-color: #102848;
+  }
+  .home-stage .home-header .main-nav a:hover,
+  .home-stage .home-header .main-nav a[aria-current="page"] {
+    background: #e9f3ff;
+    color: #0057b5;
+    -webkit-text-fill-color: #0057b5;
+  }
+  .home-stage-content {
+    inset: auto 5.5% 7%;
+    width: 89%;
+    max-width: none;
+    height: auto;
+    pointer-events: none;
+    z-index: 6;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.55);
+  }
+  .home-stage-content h1,
+  .home-stage-content p {
+    position: static;
+    width: auto;
+    height: auto;
+    clip-path: none;
+    overflow: visible;
+    white-space: normal;
+    color: #fff;
+    margin: 0 0 12px;
+    padding: 0;
+  }
+  .home-stage-content h1 {
+    font-size: clamp(40px, 8.5vw, 64px);
+    font-weight: 800;
+    line-height: .98;
+    letter-spacing: -.04em;
+  }
+  .home-stage-content p { font-size: 16px; line-height: 1.42; margin-bottom: 20px; }
+  .home-stage-actions {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .home-stage-actions a {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto!important;
+    height: auto;
+    min-height: 46px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    text-shadow: none;
+  }
+  .home-stage-actions a span { color: inherit; }
+  .home-stage-actions .home-stage-action-primary { background: #0868ee; }
+  .home-stage-actions .home-stage-action-secondary {
+    background: #fff;
+    color: #102848;
+    -webkit-text-fill-color: #102848;
+  }
+  .home-showcase .col-side { padding: 0 12px 16px; }
+  .home-showcase .col-side .bridge-live { flex: 0 0 320px; height: 320px; }
+}
+@media (max-width: 420px) {
+  .home-stage .home-header .brand { width: min(53vw, 205px); }
+  .home-stage-content h1 { font-size: 39px; }
+  .home-stage-content p { font-size: 14px; }
+  .home-stage-actions a { font-size: 12px; padding: 11px 12px; }
+}
+
+/* On narrow screens, hide the desktop lettering baked into the approved art
+   with a feathered sky veil. The mobile wordmark, hamburger, search, and menu
+   are real elements drawn above it. No rectangular edge. */
+@media (max-width: 860px) {
+  .home-stage::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 154px;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(139,174,232,.75) 0%,
+      rgba(160,181,226,.69) 55%,
+      rgba(166,185,226,.12) 87%,
+      transparent 100%);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    -webkit-mask-image: linear-gradient(#000 0%, #000 56%, transparent 100%);
+    mask-image: linear-gradient(#000 0%, #000 56%, transparent 100%);
+  }
+}
+
+/* Approved dynamic navigation: actual rendered HTML text, not image lettering. */
+.home-stage .home-header .nav-chevron {
+  display: inline-block;
+  vertical-align: 3px;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+@media (min-width: 861px) {
+  .home-stage .home-header .main-nav a {
+    color: #08234d;
+    -webkit-text-fill-color: #08234d;
+    font-size: clamp(12px, 1.24vw, 21px);
+    font-weight: 800;
+    letter-spacing: -.024em;
+    line-height: 1.35;
+    top: 8.0%;
+    height: auto;
+    overflow: visible;
+    text-shadow: 0 1px 2px rgba(218,232,251,.2);
+  }
+  .home-stage .home-header .main-nav a:nth-child(1) {
+    color: #0053b8;
+    -webkit-text-fill-color: #0053b8;
+  }
+  .home-stage .home-header .nav-search {
+    color: #09264c;
+  }
+  .home-stage .home-header .nav-search svg {
+    opacity: 1;
+    width: min(1.7vw, 28px);
+    height: min(1.7vw, 28px);
+    max-width: none;
+    display: block;
+    margin: auto;
+  }
+  .home-stage .home-header .main-nav a:hover,
+  .home-stage .home-header .main-nav a:focus-visible {
+    color: #0053b8;
+    -webkit-text-fill-color: #0053b8;
+  }
+}
+/* The photo has no baked nav typography on either viewport. No masking veil. */
+@media (max-width: 860px) {
+  .home-stage::before { display: none!important; }
+  .home-stage .home-header .nav-chevron { margin-left: 8px; }
+}
