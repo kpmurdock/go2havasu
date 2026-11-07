@@ -1,185 +1,325 @@
 /*
-  Go2Havasu: seamless original-photo header.
-  Scope: homepage header and only the top-edge blending of the original hero.
-  Both images below are already in Kevin's repository and are the SAME scene:
-  hero-london-bridge-sunset.webp = original unlettered photo with extra sky
-  explore-hero.webp = Kevin's original crop with title and CTA artwork.
-  Do not replace / modify the underlying bridge, boats, flags, sun or CTA art.
-*/
-
-/* The original photo has ~94px more sky (at 912px wide) than the
-   approved Explore crop. Match its scale to the current hero column. */
-.page-frame {
-  --havasu-photo-width: calc(min(100vw, 1680px) * 0.5798319);
-  --havasu-sky-height: calc(var(--havasu-photo-width) * 0.103);
-}
-@media (max-width: 1180px) {
-  .page-frame { --havasu-photo-width: min(100vw, 1680px); }
-}
-
-.home-header {
-  height: var(--havasu-sky-height);
-  min-height: 0;
-  align-items: flex-start;
-  padding: 0 14px;
+ * Go2Havasu: approved seamless photographic hero.
+ * One unmodified ORIGINAL London Bridge sunset photograph is rendered behind
+ * BOTH the brand and the live navigation. No secondary header background.
+ * The logo is a transparent asset. All menu items remain real HTML controls.
+ * Scoped to the homepage; guides, checkout, JS and secondary pages unchanged.
+ */
+.home-stage {
   position: relative;
   isolation: isolate;
-  overflow: visible;
-  /* The sky is a continuation of the ORIGINAL photo, not a synthetic gradient.
-     The overlay only fades out its edge into the separate right-column photo. */
-  background-color: #a9bbdf;
-  background-image:
-    linear-gradient(90deg,
-      transparent 0%,
-      transparent 48%,
-      rgba(165, 183, 218, .15) 53%,
-      rgba(165, 183, 218, .97) 59%,
-      #9dbde5 74%,
-      #6aade8 100%),
-    url('/assets/images/hero-london-bridge-sunset.webp');
-  background-repeat: no-repeat;
-  background-position: left top, left top;
-  background-size: 100% 100%, var(--havasu-photo-width) auto;
+  width: 100%;
+  height: clamp(520px, 43vw, 710px);
+  min-height: 520px;
+  overflow: hidden;
+  background: #668ebd;
 }
-
-/* Remove the former synthetic color band at the lower header edge. */
-.home-header::before,
-.home-header::after { content: none; }
-
-/* The logo remains Kevin's ORIGINAL mark.
-   A light-color-key SVG filter knocks out the white rectangular matte
-   and pale-blue sky around it; the mask removes its baked lower photo strip.
-   This is NOT a flattened navigation graphic. */
-.home-header .brand {
+.home-stage-photo,
+.home-stage-photo > img,
+.home-stage-scrim {
   position: absolute;
-  top: 0;
-  left: 6px;
-  z-index: 4;
-  margin: 0;
-  max-width: none;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
-.home-header .brand-art,
-.home-header .brand-art img {
+.home-stage-photo { z-index: 0; display: block; }
+.home-stage-photo img {
   display: block;
-  width: clamp(270px, 27vw, 370px);
-  height: auto;
-  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
 }
-.home-header .brand-art {
-  mix-blend-mode: normal;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 69%, rgba(0,0,0,.88) 75%, transparent 88%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 69%, rgba(0,0,0,.88) 75%, transparent 88%);
+.home-stage-scrim {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(4,19,39,.33) 0%, rgba(4,19,39,.16) 36%, transparent 68%),
+    linear-gradient(180deg, rgba(240,245,255,.12), transparent 33%);
 }
-.home-header .brand-art img { filter: url('#havasu-logo-matte-removal'); }
 
-/* Live menu is HTML links with real hrefs, search is a real button/dialog. */
-.home-header .header-nav {
-  display: flex;
+/* Header floats on the exact same photo as the hero content.
+ * This intentionally overrides Kevin's previous colored header band.
+ */
+.home-stage .home-header {
   position: relative;
   z-index: 5;
-  align-self: flex-start;
-  align-items: center;
-  gap: 5px;
-  min-width: 0;
-  margin: 0 0 0 clamp(285px, 29vw, 445px);
-  padding: 12px 0 0;
+  top: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 0;
+  height: auto;
+  padding: 18px clamp(20px, 3.7vw, 64px) 0;
+  margin: 0;
+  gap: 22px;
+  background: transparent;
+  background-image: none;
+  border: 0;
+  box-shadow: none;
+  isolation: auto;
+  overflow: visible;
+  container-type: normal;
 }
-.home-header .main-nav {
-  position: static;
+.home-stage .home-header::before,
+.home-stage .home-header::after { content: none; display: none; }
+.home-stage .home-header .brand {
+  display: block;
+  position: relative;
+  z-index: 5;
+  top: auto;
+  left: auto;
+  flex: 0 0 auto;
+  width: clamp(260px, 22.5vw, 374px);
+  max-width: 30%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: transparent;
+}
+.home-stage .home-header .home-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  mix-blend-mode: normal;
+  filter: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.home-stage .home-header .header-nav {
+  position: relative;
+  z-index: 6;
   display: flex;
   flex: 0 1 auto;
   align-items: center;
-  justify-content: flex-start;
-  gap: clamp(6px, 1.05vw, 19px);
+  align-self: flex-start;
   min-width: 0;
+  margin: 0;
+  padding: 13px 0 0;
+  gap: clamp(5px, .8vw, 12px);
+}
+.home-stage .home-header .main-nav {
+  display: flex;
+  position: static;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(10px, 1.55vw, 26px);
+  margin: 0;
   padding: 0;
+  min-width: 0;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
 }
-.home-header .main-nav a {
-  font-size: clamp(11.5px, 1.02vw, 16px);
-  padding: 8px 1px 7px;
+.home-stage .home-header .main-nav a {
+  display: inline-block;
   white-space: nowrap;
-  text-shadow: 0 1px 3px rgba(235,244,255,.65);
-}
-.home-header .main-nav a[aria-current='page'] {
-  color: #0058ca;
+  font-size: clamp(12px, .99vw, 16px);
+  font-weight: 800;
+  color: #0b2448;
+  text-shadow: 0 1px 2px rgba(232,241,254,.65);
+  line-height: 1.4;
   border-radius: 0;
-  border-bottom: 3px solid #0058ca;
+  border-bottom: 3px solid transparent;
+  padding: 6px 1px;
 }
-.home-header .nav-search {
+.home-stage .home-header .main-nav a:hover,
+.home-stage .home-header .main-nav a[aria-current="page"] {
+  color: #005ad4;
+  border-bottom-color: #0069e4;
+}
+.home-stage .home-header .nav-search {
   flex: 0 0 38px;
-  color: #112b4c;
+  width: 38px;
+  height: 38px;
+  color: #0b2448;
 }
-.home-header .nav-search:hover,
-.home-header .main-nav a:hover { color: #0058ca; }
-.home-header .menu-toggle { z-index: 6; }
+.home-stage .home-header .nav-search svg { width: 25px; height: 25px; }
+.home-stage .home-header .menu-toggle { z-index: 8; }
 
-/* The first pixels of the existing hero crop fade up from the same raw photo.
-   Only its first 38px receive any opacity adjustment, removing a horizontal
-   seam without repainting the water, boats, bridge, sun, or graphic copy. */
-.home-header + main .hero.hero-art {
-  background-image: url('/assets/images/hero-london-bridge-sunset.webp');
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: left calc(0px - var(--havasu-sky-height));
+/* The headline, intro and CTAs are real HTML, not baked into a photo. */
+.home-stage-content {
+  position: absolute;
+  z-index: 2;
+  top: 31%;
+  left: clamp(28px, 5.25vw, 90px);
+  width: min(720px, 56%);
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(3,19,41,.56);
 }
-.home-header + main .hero.hero-art > picture {
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, rgba(0,0,0,.22) 12px, #000 38px);
-  mask-image: linear-gradient(to bottom, transparent 0px, rgba(0,0,0,.22) 12px, #000 38px);
+.home-stage-content h1 {
+  color: #fff;
+  font-family: var(--font);
+  font-size: clamp(48px, 5.15vw, 84px);
+  font-weight: 800;
+  letter-spacing: -.052em;
+  line-height: .96;
+  margin: 0 0 18px;
 }
+.home-stage-content p {
+  max-width: 640px;
+  font-size: clamp(17px, 1.4vw, 22px);
+  line-height: 1.35;
+  font-weight: 650;
+  margin: 0 0 26px;
+}
+.home-stage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  text-shadow: none;
+}
+.home-stage-actions a {
+  min-height: 50px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 800;
+  box-shadow: 0 5px 16px rgba(5,24,54,.20);
+}
+.home-stage-action-primary {
+  color: #fff;
+  background: #0868ef;
+  border: 2px solid #0868ef;
+}
+.home-stage-action-primary:hover { background: #0052be; border-color: #0052be; }
+.home-stage-action-secondary {
+  color: #0b2448;
+  background: rgba(255,255,255,.90);
+  border: 2px solid rgba(255,255,255,.96);
+}
+.home-stage-action-secondary:hover { background: #fff; }
 
+/* Keep the remaining original destination content directly below the hero,
+ * without the old blank first row reserved for the small hero. */
+.home-showcase {
+  grid-template-rows: none;
+  align-items: start;
+  background: #f4f8fe;
+}
+.home-showcase .col-main,
+.home-showcase .col-side {
+  display: flex;
+  flex-direction: column;
+  grid-row: auto;
+  gap: 0;
+}
+.home-showcase .col-side { gap: 10px; padding: 12px 10px; }
+.home-showcase .col-side .bridge-live { flex: 0 0 360px; height: 360px; }
+.home-showcase .col-side .sunset-banner { flex: 0 0 220px; height: 220px; }
+
+/* Preserve the site's menu handler, collapse only at its existing 860px JS breakpoint. */
 @media (min-width: 861px) and (max-width: 1180px) {
-  .home-header .brand-art,
-  .home-header .brand-art img { width: 274px; }
-  .home-header .header-nav {
-    margin-left: 290px;
-    padding-top: 12px;
-  }
-  .home-header .main-nav { gap: 7px; }
-  .home-header .main-nav a { font-size: 11.7px; }
+  .home-stage .home-header { padding: 15px 20px 0; gap: 12px; }
+  .home-stage .home-header .brand { width: 242px; max-width: 28%; }
+  .home-stage .home-header .header-nav { padding-top: 11px; }
+  .home-stage .home-header .main-nav { gap: clamp(7px, .95vw, 11px); }
+  .home-stage .home-header .main-nav a { font-size: clamp(11px, 1vw, 13px); }
+  .home-stage .home-header .nav-search { flex-basis: 30px; width: 30px; }
+  .home-stage-content { width: min(590px, 62%); }
 }
-
 @media (max-width: 860px) {
-  .home-header {
-    position: relative; /* do not stick a header-colored rectangle over the photo */
-    padding: 0 12px;
-    min-height: 0;
-    height: var(--havasu-sky-height);
+  .home-stage {
+    height: clamp(540px, 90svh, 710px);
+    min-height: 540px;
   }
-  .home-header .brand { left: 8px; top: 0; max-width: none; }
-  .home-header .brand-art,
-  .home-header .brand-art img { width: min(58vw, 260px); height: auto; }
-  .home-header .header-nav {
-    position: static;
+  .home-stage-photo img { object-position: 68% center; }
+  .home-stage-scrim {
+    background: linear-gradient(180deg,
+      rgba(5,21,45,.03) 0%,
+      rgba(5,21,45,.20) 28%,
+      rgba(5,21,45,.59) 75%,
+      rgba(5,21,45,.38) 100%);
+  }
+  .home-stage .home-header {
+    padding: 12px 16px 0;
+    align-items: flex-start;
+    position: relative;
+    gap: 0;
+  }
+  .home-stage .home-header .brand {
+    width: min(62vw, 270px);
+    max-width: calc(100% - 106px);
+  }
+  .home-stage .home-header .header-nav { display: contents; }
+  .home-stage .home-header .menu-toggle {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    right: 55px;
+    top: 16px;
     margin: 0;
-    padding: 0;
-    display: contents;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.76);
   }
-  .home-header .main-nav {
+  .home-stage .home-header .nav-search {
+    position: absolute;
+    z-index: 8;
+    right: 12px;
+    top: 17px;
+    width: 39px;
+    height: 39px;
+    background: rgba(255,255,255,.76);
+    border-radius: 8px;
+  }
+  .home-stage .home-header .main-nav {
     display: none;
     position: absolute;
-    top: calc(100% + 6px);
-    left: 8px;
-    right: 8px;
+    top: 65px;
+    left: 14px;
+    right: 14px;
     z-index: 9;
+    width: auto;
     flex-direction: column;
-    background: #fff;
+    align-items: stretch;
     gap: 0;
-    padding: 8px;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(8, 30, 50, .2);
+    background: #fff;
+    padding: 9px;
+    border-radius: 12px;
+    box-shadow: 0 18px 38px rgba(6,28,54,.24);
   }
-  .home-header .main-nav.is-open { display: flex; }
-  .home-header .main-nav a { font-size: 16px; padding: 12px; }
-  .home-header .menu-toggle {
-    display: inline-flex;
-    position: absolute;
-    right: 51px;
-    top: 6px;
+  .home-stage .home-header .main-nav.is-open { display: flex; }
+  .home-stage .home-header .main-nav a {
+    font-size: 16px;
+    border-bottom: 0;
+    padding: 12px 14px;
+    text-shadow: none;
+    border-radius: 8px;
   }
-  .home-header .nav-search {
-    position: absolute;
-    right: 8px;
-    top: 8px;
-    z-index: 6;
+  .home-stage-content {
+    top: auto;
+    bottom: 9%;
+    left: 6%;
+    width: 88%;
   }
+  .home-stage-content h1 { font-size: clamp(42px, 9vw, 62px); }
+  .home-stage-content p { font-size: 17px; line-height: 1.4; }
+  .home-stage-actions a { min-height: 47px; font-size: 14px; padding: 10px 16px; }
+  .home-showcase .col-side { padding: 0 12px 16px; }
+  .home-showcase .col-side .bridge-live { flex-basis: 320px; height: 320px; }
+}
+@media (max-width: 520px) {
+  .home-stage { height: min(720px, 90svh); min-height: 570px; }
+  .home-stage .home-header .brand { width: min(58vw, 235px); }
+  .home-stage-content { bottom: 8%; }
+  .home-stage-content h1 { font-size: clamp(37px, 10.2vw, 49px); }
+  .home-stage-content p { font-size: 15px; margin-bottom: 18px; }
+  .home-stage-actions { gap: 9px; }
+  .home-stage-actions a { padding: 9px 13px; font-size: 12.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-stage, .home-stage * { scroll-behavior: auto; }
 }
