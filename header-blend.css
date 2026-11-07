@@ -1,0 +1,115 @@
+/* Go2Havasu approved header treatment, 2026-11-06.
+   Header-only refinement. The original Explore hero, bridge, boats, sun,
+   CTA hit areas, gallery, and all other page imagery are intentionally untouched.
+   Navigation remains native, focusable HTML rather than image text. */
+
+.home-header {
+  /* Sky tones are tuned to the existing photograph at the header boundary. */
+  background:
+    radial-gradient(ellipse at 62% 83%, rgba(251, 206, 191, .14), transparent 53%),
+    linear-gradient(180deg, #cbd8f1 0%, #bcc8e9 48%, #a5a8d3 100%);
+  isolation: isolate;
+  overflow: visible;
+}
+
+/* Soften the join into the unmodified hero photograph without replacing it. */
+.home-header::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: linear-gradient(180deg, rgba(165, 168, 211, .80), rgba(165, 168, 211, 0));
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* White/sky pixels in Kevin's existing logo artwork blend into the header,
+   and the outside edge fades rather than ending as a rectangular block. */
+.home-header .brand { position: relative; z-index: 2; }
+.home-header .brand-art {
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse 79% 78% at 50% 48%, #000 55%, rgba(0, 0, 0, .98) 70%, transparent 99%);
+  mask-image: radial-gradient(ellipse 79% 78% at 50% 48%, #000 55%, rgba(0, 0, 0, .98) 70%, transparent 99%);
+}
+
+/* Functional links, search and keyboard focus stay above image overlays. */
+.home-header .header-nav,
+.home-header .menu-toggle { position: relative; z-index: 3; }
+.home-header .main-nav a,
+.home-header .nav-search { text-shadow: 0 1px 2px rgba(255, 255, 255, .35); }
+
+@media (min-width: 861px) {
+  .home-header {
+    min-height: 108px;
+    padding: 4px 18px 0 12px;
+    align-items: flex-start;
+  }
+  .home-header .brand {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    max-width: none;
+    margin: 0;
+  }
+  .home-header .brand-art,
+  .home-header .brand-art img {
+    width: clamp(270px, 28vw, 440px);
+    height: auto;
+    max-width: none;
+  }
+  /* Raise the real menu clear of the scene's flagpoles. */
+  .home-header .header-nav {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    margin: 0 0 0 clamp(300px, 31vw, 475px);
+    padding-top: 16px;
+    min-width: 0;
+  }
+  .home-header .main-nav {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    gap: clamp(8px, 1.05vw, 19px);
+    padding: 0;
+  }
+  .home-header .main-nav a {
+    font-size: clamp(12px, 1.04vw, 16px);
+    padding: 8px 0;
+  }
+  .home-header .main-nav a[aria-current="page"] {
+    color: #005dc6;
+    border-bottom: 3px solid #005dc6;
+    border-radius: 0;
+  }
+  .home-header .nav-search {
+    flex: 0 0 40px;
+  }
+}
+
+@media (min-width: 861px) and (max-width: 1100px) {
+  .home-header .brand-art,
+  .home-header .brand-art img { width: 270px; }
+  .home-header .header-nav {
+    margin-left: 290px;
+    padding-top: 14px;
+  }
+  .home-header .main-nav { gap: 8px; }
+  .home-header .main-nav a { font-size: 12px; }
+}
+
+@media (max-width: 860px) {
+  /* Preserve the existing accessible hamburger and mobile nav behavior. */
+  .home-header {
+    min-height: 78px;
+    padding: 6px 12px;
+  }
+  .home-header .brand { max-width: min(65vw, 280px); }
+  .home-header .brand-art,
+  .home-header .brand-art img { width: 100%; height: auto; max-width: 100%; }
+  .home-header .header-nav { position: static; }
+  .home-header .main-nav.is-open { z-index: 6; }
+  .home-header::after { height: 14px; }
+}
