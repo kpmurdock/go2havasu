@@ -65,3 +65,9 @@ body{overflow-x:hidden}
  .business-grid p{font-size:11px}
  .video-panel{height:320px}
 }
+
+/* Full-width scenic sunset replaces the public business plan. */
+main > .sunset-banner{width:100%;min-height:clamp(280px,32vw,510px);margin:0;border-radius:0;background-position:center 52%;background-size:cover;box-sizing:border-box;padding:clamp(20px,4vw,60px)}
+main > .sunset-banner strong{font-size:clamp(23px,2.4vw,38px)}
+main > .sunset-banner span{font-size:clamp(13px,1.1vw,18px)}
+@media(max-width:760px){main > .sunset-banner{min-height:280px}}
