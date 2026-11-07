@@ -46,6 +46,22 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page-frame">
     <header class="site-header home-header" role="banner">
+      <!-- Image-only color key: removes the pale rectangular logo matte.
+           Live navigation, keyboard focus, and search remain HTML controls. -->
+      <svg aria-hidden="true" focusable="false" width="0" height="0"
+           style="position:absolute;width:0;height:0;overflow:hidden"
+           xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="havasu-logo-matte-removal" x="0" y="0" width="100%" height="100%"
+                  color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="
+               1 0 0 0 0
+               0 1 0 0 0
+               0 0 1 0 0
+              -1.9 -1.9 -1.9 0 4.55"/>
+          </filter>
+        </defs>
+      </svg>
             <a class="brand" href="/">
               <picture class="brand-art">
                 <source srcset="/assets/images/header-logo-hero.webp" type="image/webp">
