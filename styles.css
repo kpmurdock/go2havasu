@@ -65,3 +65,15 @@ body{overflow-x:hidden}
  .business-grid p{font-size:11px}
  .video-panel{height:320px}
 }
+
+/* Visitor search added without changing approved two-column hero composition */
+.search-section{padding:42px 20px;background:#eaf5fb;text-align:center}
+.search-section>div{max-width:800px;margin:0 auto}
+.search-section h2{margin:0 0 8px;color:#073d62;font-size:clamp(24px,2.5vw,34px)}
+.search-section p{line-height:1.5}
+.search-section form label{display:block;text-align:left;font-size:13px;font-weight:700;margin-bottom:8px}
+.search-controls{display:flex;gap:10px}
+.search-controls input{min-width:0;flex:1;border:1px solid #b4cddd;border-radius:8px;padding:13px 15px;font:inherit}
+.search-controls button{border:0;border-radius:8px;background:#087ddd;color:white;font:inherit;font-weight:700;padding:12px 18px;cursor:pointer}
+.search-controls button:hover,.search-controls button:focus-visible{background:#005da8}
+@media(max-width:560px){.search-controls{flex-direction:column}}
