@@ -141,21 +141,18 @@ button, input { font-family: inherit; }
 .brand-art,
 .brand-art img {
   display: block;
-  height: 72px;
-  width: auto;
+  width: 311px;
+  height: 128px;
+  max-width: none;
 }
 
 @container header (min-width: 980px) {
   .brand { max-width: none; }
-  .brand-art,
-  .brand-art img { height: 84px; }
   .main-nav { gap: 18px; }
   .main-nav a { font-size: 14.5px; }
 }
 
 @container header (min-width: 1180px) {
-  .brand-art,
-  .brand-art img { height: 96px; }
   .main-nav { gap: 26px; }
   .main-nav a { font-size: 15.5px; }
 }
@@ -174,7 +171,7 @@ button, input { font-family: inherit; }
     flex: 0 1 auto;
     min-width: 0;
     /* Links sit on the Go2Havasu.com line, above the white wave. */
-    margin-bottom: 12px;
+    margin-bottom: 36px;
   }
   .header-nav .main-nav {
     position: static;
@@ -907,6 +904,9 @@ button, input { font-family: inherit; }
 
 @media (max-width: 860px) {
   .menu-toggle { display: inline-flex; }
+  .brand { max-width: calc(100% - 108px); }
+  .brand-art,
+  .brand-art img { width: 100%; height: auto; max-width: 100%; }
   .main-nav {
     display: none;
     position: absolute;
@@ -950,7 +950,7 @@ button, input { font-family: inherit; }
   .search-row { flex-direction: column; }
   .brand { max-width: 68vw; }
   .brand-art,
-  .brand-art img { height: 58px; }
+  .brand-art img { width: 100%; height: auto; max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
