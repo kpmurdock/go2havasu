@@ -441,3 +441,54 @@
     mask-image: linear-gradient(#000 0%, #000 56%, transparent 100%);
   }
 }
+
+/* Approved dynamic navigation: actual rendered HTML text, not image lettering. */
+.home-stage .home-header .nav-chevron {
+  display: inline-block;
+  vertical-align: 3px;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+@media (min-width: 861px) {
+  .home-stage .home-header .main-nav a {
+    color: #08234d;
+    -webkit-text-fill-color: #08234d;
+    font-size: clamp(12px, 1.24vw, 21px);
+    font-weight: 800;
+    letter-spacing: -.024em;
+    line-height: 1.35;
+    top: 8.0%;
+    height: auto;
+    overflow: visible;
+    text-shadow: 0 1px 2px rgba(218,232,251,.2);
+  }
+  .home-stage .home-header .main-nav a:nth-child(1) {
+    color: #0053b8;
+    -webkit-text-fill-color: #0053b8;
+  }
+  .home-stage .home-header .nav-search {
+    color: #09264c;
+  }
+  .home-stage .home-header .nav-search svg {
+    opacity: 1;
+    width: min(1.7vw, 28px);
+    height: min(1.7vw, 28px);
+    max-width: none;
+    display: block;
+    margin: auto;
+  }
+  .home-stage .home-header .main-nav a:hover,
+  .home-stage .home-header .main-nav a:focus-visible {
+    color: #0053b8;
+    -webkit-text-fill-color: #0053b8;
+  }
+}
+/* The photo has no baked nav typography on either viewport. No masking veil. */
+@media (max-width: 860px) {
+  .home-stage::before { display: none!important; }
+  .home-stage .home-header .nav-chevron { margin-left: 8px; }
+}
