@@ -1,207 +1,224 @@
-/*
- * Go2Havasu: approved seamless photographic hero.
- * One unmodified ORIGINAL London Bridge sunset photograph is rendered behind
- * BOTH the brand and the live navigation. No secondary header background.
- * The logo is a transparent asset. All menu items remain real HTML controls.
- * Scoped to the homepage; guides, checkout, JS and secondary pages unchanged.
- */
+/* Owner-approved Go2Havasu homepage art, November 2026.
+   The exact three-boat sunset artwork is one continuous hero image.
+   This overlay provides real semantic links, accessible search and mobile navigation;
+   no painted header band, second sky, square matte or seam. */
 .home-stage {
   position: relative;
-  isolation: isolate;
   width: 100%;
-  height: clamp(520px, 43vw, 710px);
-  min-height: 520px;
+  aspect-ratio: 1672 / 941;
+  min-height: 0;
+  height: auto;
   overflow: hidden;
-  background: #668ebd;
+  isolation: isolate;
+  background: #477fae;
 }
 .home-stage-photo,
-.home-stage-photo > img,
-.home-stage-scrim {
+.home-stage-photo img {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-}
-.home-stage-photo { z-index: 0; display: block; }
-.home-stage-photo img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 50%;
 }
-.home-stage-scrim {
-  z-index: 1;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(4,19,39,.33) 0%, rgba(4,19,39,.16) 36%, transparent 68%),
-    linear-gradient(180deg, rgba(240,245,255,.12), transparent 33%);
+.home-stage-photo { z-index: 0; }
+.home-stage-photo img {
+  object-fit: fill;
+  object-position: center;
 }
-
-/* Header floats on the exact same photo as the hero content.
- * This intentionally overrides Kevin's previous colored header band.
- */
+.home-stage .home-stage-scrim { display: none; }
 .home-stage .home-header {
-  position: relative;
-  z-index: 5;
-  top: auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  position: absolute;
+  inset: 0;
+  z-index: 6;
   width: 100%;
+  height: 100%;
   min-height: 0;
-  height: auto;
-  padding: 18px clamp(20px, 3.7vw, 64px) 0;
   margin: 0;
-  gap: 22px;
+  padding: 0;
+  display: block;
+  overflow: visible;
   background: transparent;
   background-image: none;
   border: 0;
   box-shadow: none;
   isolation: auto;
-  overflow: visible;
   container-type: normal;
+  pointer-events: none;
 }
 .home-stage .home-header::before,
-.home-stage .home-header::after { content: none; display: none; }
+.home-stage .home-header::after { display: none; content: none; }
 .home-stage .home-header .brand {
-  display: block;
-  position: relative;
-  z-index: 5;
-  top: auto;
-  left: auto;
-  flex: 0 0 auto;
-  width: clamp(260px, 22.5vw, 374px);
-  max-width: 30%;
-  height: auto;
-  margin: 0;
+  position: absolute;
+  z-index: 8;
+  left: 3.3%;
+  top: 1.9%;
+  width: 29.7%;
+  height: 19%;
+  max-width: none;
   padding: 0;
-  line-height: 0;
+  margin: 0;
+  display: block;
+  pointer-events: auto;
   background: transparent;
+  border-radius: 5px;
 }
 .home-stage .home-header .home-logo {
-  display: block;
   width: 100%;
-  height: auto;
-  max-width: 100%;
-  mix-blend-mode: normal;
+  height: 100%;
+  opacity: 0;
   filter: none;
-  -webkit-mask-image: none;
-  mask-image: none;
+  display: block;
 }
 .home-stage .home-header .header-nav {
-  position: relative;
-  z-index: 6;
-  display: flex;
-  flex: 0 1 auto;
-  align-items: center;
-  align-self: flex-start;
-  min-width: 0;
-  margin: 0;
-  padding: 13px 0 0;
-  gap: clamp(5px, .8vw, 12px);
-}
-.home-stage .home-header .main-nav {
-  display: flex;
-  position: static;
-  flex: 0 1 auto;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(10px, 1.55vw, 26px);
+  display: contents;
   margin: 0;
   padding: 0;
-  min-width: 0;
+}
+.home-stage .home-header .main-nav {
+  position: absolute;
+  z-index: 9;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
   background: transparent;
-  box-shadow: none;
   border: 0;
+  box-shadow: none;
 }
 .home-stage .home-header .main-nav a {
-  display: inline-block;
-  white-space: nowrap;
-  font-size: clamp(12px, .99vw, 16px);
-  font-weight: 800;
-  color: #0b2448;
-  text-shadow: 0 1px 2px rgba(232,241,254,.65);
-  line-height: 1.4;
+  position: absolute;
+  top: 8.0%;
+  height: 4.25%;
+  display: block;
+  padding: 0;
+  border: 0;
+  margin: 0;
   border-radius: 0;
-  border-bottom: 3px solid transparent;
-  padding: 6px 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: auto;
+  /* The approved visual typography is preserved in the photograph.
+     Actual anchor text remains in the DOM for keyboard and screen-reader use. */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  background: transparent;
+  font-size: clamp(12px, 1.15vw, 19px);
+  line-height: 1.4;
+  font-weight: 800;
 }
-.home-stage .home-header .main-nav a:hover,
-.home-stage .home-header .main-nav a[aria-current="page"] {
-  color: #005ad4;
-  border-bottom-color: #0069e4;
+.home-stage .home-header .main-nav a:nth-child(1) { left: 37.0%; width: 6.2%; }
+.home-stage .home-header .main-nav a:nth-child(2) { left: 44.4%; width: 10.5%; }
+.home-stage .home-header .main-nav a:nth-child(3) { left: 56.3%; width: 11.7%; }
+.home-stage .home-header .main-nav a:nth-child(4) { left: 69.5%; width: 6.0%; }
+.home-stage .home-header .main-nav a:nth-child(5) { left: 76.7%; width: 11.2%; }
+.home-stage .home-header .main-nav a:nth-child(6) { left: 88.6%; width: 5.0%; }
+.home-stage .home-header .main-nav a:hover::after,
+.home-stage .home-header .main-nav a:focus-visible::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  right: 4px;
+  height: 3px;
+  border-radius: 999px;
+  background: #0866ef;
+}
+.home-stage .home-header .main-nav a:focus-visible,
+.home-stage .home-header .brand:focus-visible,
+.home-stage .home-header .nav-search:focus-visible,
+.home-stage .home-header .menu-toggle:focus-visible {
+  outline: 3px solid #ffbf00;
+  outline-offset: 2px;
 }
 .home-stage .home-header .nav-search {
-  flex: 0 0 38px;
-  width: 38px;
-  height: 38px;
-  color: #0b2448;
+  position: absolute;
+  z-index: 9;
+  left: 94.1%;
+  top: 7.3%;
+  width: 3.2%;
+  height: 4.9%;
+  min-width: 34px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: block;
+  background: transparent;
+  pointer-events: auto;
+  color: transparent;
+  cursor: pointer;
 }
-.home-stage .home-header .nav-search svg { width: 25px; height: 25px; }
-.home-stage .home-header .menu-toggle { z-index: 8; }
+.home-stage .home-header .nav-search svg { opacity: 0; }
+.home-stage .home-header .menu-toggle { display: none; }
 
-/* The headline, intro and CTAs are real HTML, not baked into a photo. */
+/* Visual copy matches the approved photograph exactly.
+   Real H1, description and CTA anchor text remain accessible in the DOM. */
 .home-stage-content {
   position: absolute;
-  z-index: 2;
-  top: 31%;
-  left: clamp(28px, 5.25vw, 90px);
-  width: min(720px, 56%);
-  color: #fff;
-  text-shadow: 0 3px 10px rgba(3,19,41,.56);
-}
-.home-stage-content h1 {
-  color: #fff;
-  font-family: var(--font);
-  font-size: clamp(48px, 5.15vw, 84px);
-  font-weight: 800;
-  letter-spacing: -.052em;
-  line-height: .96;
-  margin: 0 0 18px;
-}
-.home-stage-content p {
-  max-width: 640px;
-  font-size: clamp(17px, 1.4vw, 22px);
-  line-height: 1.35;
-  font-weight: 650;
-  margin: 0 0 26px;
-}
-.home-stage-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
+  z-index: 5;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  color: transparent;
   text-shadow: none;
 }
+.home-stage-content h1,
+.home-stage-content p {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.home-stage-actions {
+  position: static;
+  display: contents;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
 .home-stage-actions a {
-  min-height: 50px;
-  padding: 12px 24px;
+  position: absolute;
+  z-index: 7;
+  top: 54.1%;
+  display: block;
+  height: 6.8%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
   border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 15px;
-  line-height: 1.25;
-  font-weight: 800;
-  box-shadow: 0 5px 16px rgba(5,24,54,.20);
+  overflow: hidden;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: auto;
 }
-.home-stage-action-primary {
-  color: #fff;
-  background: #0868ef;
-  border: 2px solid #0868ef;
+.home-stage-actions a span { color: transparent; }
+.home-stage-actions .home-stage-action-primary { left: 4.55%; width: 18.6%; }
+.home-stage-actions .home-stage-action-secondary { left: 24.1%; width: 12.7%; }
+.home-stage-actions a:hover {
+  box-shadow: 0 0 0 4px rgba(255,255,255,.55);
 }
-.home-stage-action-primary:hover { background: #0052be; border-color: #0052be; }
-.home-stage-action-secondary {
-  color: #0b2448;
-  background: rgba(255,255,255,.90);
-  border: 2px solid rgba(255,255,255,.96);
+.home-stage-actions a:focus-visible {
+  outline: 4px solid #ffbf00;
+  outline-offset: 2px;
 }
-.home-stage-action-secondary:hover { background: #fff; }
 
-/* Keep the remaining original destination content directly below the hero,
- * without the old blank first row reserved for the small hero. */
+/* Keep the existing content and links below the full-bleed photo. */
 .home-showcase {
   grid-template-rows: none;
   align-items: start;
@@ -212,114 +229,190 @@
   display: flex;
   flex-direction: column;
   grid-row: auto;
+  min-width: 0;
   gap: 0;
 }
 .home-showcase .col-side { gap: 10px; padding: 12px 10px; }
 .home-showcase .col-side .bridge-live { flex: 0 0 360px; height: 360px; }
 .home-showcase .col-side .sunset-banner { flex: 0 0 220px; height: 220px; }
 
-/* Preserve the site's menu handler, collapse only at its existing 860px JS breakpoint. */
-@media (min-width: 861px) and (max-width: 1180px) {
-  .home-stage .home-header { padding: 15px 20px 0; gap: 12px; }
-  .home-stage .home-header .brand { width: 242px; max-width: 28%; }
-  .home-stage .home-header .header-nav { padding-top: 11px; }
-  .home-stage .home-header .main-nav { gap: clamp(7px, .95vw, 11px); }
-  .home-stage .home-header .main-nav a { font-size: clamp(11px, 1vw, 13px); }
-  .home-stage .home-header .nav-search { flex-basis: 30px; width: 30px; }
-  .home-stage-content { width: min(590px, 62%); }
-}
 @media (max-width: 860px) {
+  /* Crop to the bridge, sun and water; show a truly live mobile menu. */
   .home-stage {
-    height: clamp(540px, 90svh, 710px);
-    min-height: 540px;
+    height: min(760px, max(590px, 90svh));
+    min-height: 590px;
+    aspect-ratio: auto;
   }
-  .home-stage-photo img { object-position: 68% center; }
-  .home-stage-scrim {
+  .home-stage-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 77% center;
+  }
+  .home-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
     background: linear-gradient(180deg,
-      rgba(5,21,45,.03) 0%,
-      rgba(5,21,45,.20) 28%,
-      rgba(5,21,45,.59) 75%,
-      rgba(5,21,45,.38) 100%);
+      rgba(8,29,54,.18) 0%,
+      rgba(8,29,54,.11) 32%,
+      rgba(8,29,54,.6) 70%,
+      rgba(8,29,54,.5) 100%);
   }
   .home-stage .home-header {
-    padding: 12px 16px 0;
-    align-items: flex-start;
-    position: relative;
-    gap: 0;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    display: block;
+    z-index: 12;
   }
   .home-stage .home-header .brand {
-    width: min(62vw, 270px);
-    max-width: calc(100% - 106px);
+    left: 14px;
+    top: 8px;
+    width: min(55vw, 244px);
+    height: auto;
+    min-height: 85px;
+    border-radius: 0;
   }
-  .home-stage .home-header .header-nav { display: contents; }
+  .home-stage .home-header .home-logo {
+    display: block;
+    height: auto;
+    opacity: 1;
+    filter: saturate(1.32) contrast(1.28)
+      drop-shadow(0 1px 2px rgba(255,255,255,.85));
+  }
   .home-stage .home-header .menu-toggle {
+    display: inline-flex;
     position: absolute;
+    z-index: 13;
+    top: 17px;
+    right: 60px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,.85);
+    pointer-events: auto;
+  }
+  .home-stage .home-header .nav-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: auto;
+    top: 17px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.85);
+    color: #102848;
+  }
+  .home-stage .home-header .nav-search svg { opacity: 1; width: 22px; height: 22px; }
+  .home-stage .home-header .main-nav {
+    position: absolute;
+    top: 70px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    height: auto;
+    display: none;
+    padding: 8px;
+    margin: 0;
+    z-index: 14;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 45px rgba(2,23,47,.26);
+    pointer-events: auto;
+  }
+  .home-stage .home-header .main-nav.is-open { display: flex; flex-direction: column; }
+  .home-stage .home-header .main-nav a {
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 12px 14px;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 800;
+    border-radius: 8px;
+    color: #102848;
+    -webkit-text-fill-color: #102848;
+  }
+  .home-stage .home-header .main-nav a:hover,
+  .home-stage .home-header .main-nav a[aria-current="page"] {
+    background: #e9f3ff;
+    color: #0057b5;
+    -webkit-text-fill-color: #0057b5;
+  }
+  .home-stage-content {
+    inset: auto 5.5% 7%;
+    width: 89%;
+    max-width: none;
+    height: auto;
+    pointer-events: none;
+    z-index: 6;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.55);
+  }
+  .home-stage-content h1,
+  .home-stage-content p {
+    position: static;
+    width: auto;
+    height: auto;
+    clip-path: none;
+    overflow: visible;
+    white-space: normal;
+    color: #fff;
+    margin: 0 0 12px;
+    padding: 0;
+  }
+  .home-stage-content h1 {
+    font-size: clamp(40px, 8.5vw, 64px);
+    font-weight: 800;
+    line-height: .98;
+    letter-spacing: -.04em;
+  }
+  .home-stage-content p { font-size: 16px; line-height: 1.42; margin-bottom: 20px; }
+  .home-stage-actions {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .home-stage-actions a {
+    position: static;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    right: 55px;
-    top: 16px;
-    margin: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: rgba(255,255,255,.76);
-  }
-  .home-stage .home-header .nav-search {
-    position: absolute;
-    z-index: 8;
-    right: 12px;
-    top: 17px;
-    width: 39px;
-    height: 39px;
-    background: rgba(255,255,255,.76);
-    border-radius: 8px;
-  }
-  .home-stage .home-header .main-nav {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 14px;
-    right: 14px;
-    z-index: 9;
-    width: auto;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    background: #fff;
-    padding: 9px;
-    border-radius: 12px;
-    box-shadow: 0 18px 38px rgba(6,28,54,.24);
-  }
-  .home-stage .home-header .main-nav.is-open { display: flex; }
-  .home-stage .home-header .main-nav a {
-    font-size: 16px;
-    border-bottom: 0;
-    padding: 12px 14px;
+    width: auto!important;
+    height: auto;
+    min-height: 46px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #fff;
+    -webkit-text-fill-color: #fff;
     text-shadow: none;
-    border-radius: 8px;
   }
-  .home-stage-content {
-    top: auto;
-    bottom: 9%;
-    left: 6%;
-    width: 88%;
+  .home-stage-actions a span { color: inherit; }
+  .home-stage-actions .home-stage-action-primary { background: #0868ee; }
+  .home-stage-actions .home-stage-action-secondary {
+    background: #fff;
+    color: #102848;
+    -webkit-text-fill-color: #102848;
   }
-  .home-stage-content h1 { font-size: clamp(42px, 9vw, 62px); }
-  .home-stage-content p { font-size: 17px; line-height: 1.4; }
-  .home-stage-actions a { min-height: 47px; font-size: 14px; padding: 10px 16px; }
   .home-showcase .col-side { padding: 0 12px 16px; }
-  .home-showcase .col-side .bridge-live { flex-basis: 320px; height: 320px; }
+  .home-showcase .col-side .bridge-live { flex: 0 0 320px; height: 320px; }
 }
-@media (max-width: 520px) {
-  .home-stage { height: min(720px, 90svh); min-height: 570px; }
-  .home-stage .home-header .brand { width: min(58vw, 235px); }
-  .home-stage-content { bottom: 8%; }
-  .home-stage-content h1 { font-size: clamp(37px, 10.2vw, 49px); }
-  .home-stage-content p { font-size: 15px; margin-bottom: 18px; }
-  .home-stage-actions { gap: 9px; }
-  .home-stage-actions a { padding: 9px 13px; font-size: 12.5px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .home-stage, .home-stage * { scroll-behavior: auto; }
+@media (max-width: 420px) {
+  .home-stage .home-header .brand { width: min(53vw, 205px); }
+  .home-stage-content h1 { font-size: 39px; }
+  .home-stage-content p { font-size: 14px; }
+  .home-stage-actions a { font-size: 12px; padding: 11px 12px; }
 }
