@@ -234,6 +234,19 @@
 .home-showcase .col-side .bridge-live { flex: 0 0 360px; height: 360px; }
 .home-showcase .col-side .sunset-banner { flex: 0 0 220px; height: 220px; }
 
+.attractions-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 12px 0;
+  border-radius: 8px;
+}
+
+@media (min-width: 1181px) {
+  .home-showcase .col-side { align-self: stretch; }
+  .home-showcase .col-side .sunset-banner { flex: 1 0 220px; }
+}
+
 @media (max-width: 860px) {
   /* Crop to the bridge, sun and water; show a truly live mobile menu. */
   .home-stage {
