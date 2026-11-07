@@ -164,15 +164,23 @@ button, input { font-family: inherit; }
 
 @media (min-width: 861px) {
   .brand { margin-right: -34px; }
+  .site-header { align-items: flex-end; }
   .header-nav {
     position: static;
     display: flex;
     align-items: center;
+    align-self: flex-end;
     gap: 2px;
     flex: 0 1 auto;
     min-width: 0;
+    /* Links sit on the Go2Havasu.com line, under the sun and bridge. */
+    margin-bottom: 4px;
   }
-  .header-nav .main-nav { position: static; flex: 0 0 auto; }
+  .header-nav .main-nav {
+    position: static;
+    flex: 0 0 auto;
+    padding-bottom: 0;
+  }
 }
 
 .menu-toggle {
