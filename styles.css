@@ -1004,3 +1004,55 @@ button, input { font-family: inherit; }
 .checkout-actions button:nth-child(2){background:#38566f}
 .checkout-actions button:disabled{opacity:.6;cursor:wait}
 .checkout-actions p{flex-basis:100%;font-size:13px;min-height:20px}
+
+/* Self-contained homepage QR invitation; existing hero, webcam and cards unchanged. */
+.qr-invite {
+  max-width: 1120px;
+  margin: 28px auto 32px;
+  padding: clamp(22px, 4vw, 38px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.qr-invite-copy { max-width: 670px; }
+.qr-invite-eyebrow {
+  display: block;
+  color: var(--blue-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.qr-invite h2 {
+  margin: 8px 0 10px;
+  color: var(--navy);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.2;
+}
+.qr-invite p { margin: 0 0 15px; color: var(--muted); }
+.qr-invite-link { color: var(--blue-dark); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.qr-invite-code {
+  display: flex;
+  flex: 0 0 200px;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+.qr-invite-code img { display: block; width: 180px; height: 180px; }
+@media (max-width: 700px) {
+  .qr-invite { margin: 18px 12px 26px; padding: 22px 18px; gap: 18px; flex-direction: column; text-align: center; }
+  .qr-invite-code { flex-basis: auto; }
+}
